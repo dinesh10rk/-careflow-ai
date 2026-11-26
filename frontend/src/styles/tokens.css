@@ -1,0 +1,167 @@
+/* Design tokens, reset and base typography */
+:root {
+  color-scheme: light;
+
+  --ivory: #faf8f3;
+  --ivory-deep: #f3efe6;
+  --paper: #ffffff;
+  --line: #e6e1d4;
+  --line-soft: #eeeadf;
+
+  --navy-950: #0a1b2b;
+  --navy-900: #0e2438;
+  --navy-800: #14314b;
+  --navy-700: #1d4262;
+  --navy-300: #9fb2c4;
+  --navy-200: #c4d1dd;
+
+  --teal-700: #26696d;
+  --teal-600: #2f7f83;
+  --teal-500: #4a9a9d;
+  --teal-300: #8fc7c8;
+  --teal-100: #dcecec;
+  --teal-50: #eef6f5;
+
+  --ink: #112437;
+  --ink-2: #44566a;
+  --ink-3: #64717e;
+
+  --red: #a3342d;
+  --red-bg: #fbe3e0;
+  --amber: #8a5a0c;
+  --amber-bg: #fbf0d9;
+  --green: #2f6b4a;
+  --green-bg: #e2f0e7;
+  --blue: #2c5d8a;
+  --blue-bg: #e5eef7;
+  --violet: #5a4d92;
+  --violet-bg: #ecebf6;
+
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+
+  --shadow-1: 0 1px 2px rgba(14, 36, 56, 0.05);
+  --shadow-2: 0 1px 2px rgba(14, 36, 56, 0.05), 0 12px 28px -12px rgba(14, 36, 56, 0.18);
+
+  --font-body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-head: 'Schibsted Grotesk', 'Instrument Sans', system-ui, sans-serif;
+
+  --sidebar-w: 264px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-head);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+p {
+  margin: 0 0 0.75em;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--teal-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.muted {
+  color: var(--ink-3);
+}
+
+.text-danger {
+  color: var(--red) !important;
+}
+
+.icon {
+  flex: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(28px);
+    opacity: 0;
+  }
+}
+@keyframes rise-in {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
